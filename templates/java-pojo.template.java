@@ -1,5 +1,9 @@
 package @@moduleName@@;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 
 public class @@name@@ {
 
@@ -15,17 +19,17 @@ public class @@name@@ {
         return id;
     }
 
-    @Overrides
+    @Override
     public String toString() {
         return ToStringBuilder.reflectionToString(this);
     }
 
-    @Overrides
+    @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this);
     }
 
-    @Overrides
+    @Override
     public boolean equals(Object o) {
         return EqualsBuilder.reflectionEquals(this, o);
     }

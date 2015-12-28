@@ -1,6 +1,9 @@
 package @@moduleName@@;
 
+import javax.inject.Inject;
+
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,7 +16,7 @@ public class Mock@@name@@ implements @@name@@ {
     @Inject
     public Mock@@name@@(
         AtomicInteger idSequence,
-        Object dataStore
+        Map<String, Object> dataStore
     ) {
         this.idSequence = idSequence;
         this.dataStore = dataStore;
@@ -23,7 +26,7 @@ public class Mock@@name@@ implements @@name@@ {
     public Object getById(
         String id
     ) {
-        if (!dataStore.contains(id)) {
+        if (!dataStore.containsKey(id)) {
             throw new RuntimeException("not found: " + id);
         }
         return dataStore.get(id);
@@ -31,14 +34,14 @@ public class Mock@@name@@ implements @@name@@ {
 
     @Override
     public List<Object> getAll() {
-        return dataStore.values();
+        return new ArrayList<>(dataStore.values());
     }
 
     @Override
     public String create(
         Object o
     ) {
-        String id = idSequence.intrementAndGet();
+        String id = "" + idSequence.incrementAndGet();
         // TODO - set the ID in the object before putting into the map
         dataStore.put(id, o);
         return id;

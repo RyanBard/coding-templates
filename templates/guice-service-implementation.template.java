@@ -1,5 +1,7 @@
 package @@moduleName@@;
 
+import javax.inject.Inject;
+
 import java.util.List;
 
 
@@ -32,7 +34,7 @@ public class Default@@name@@ implements @@name@@ {
     ) {
         String id = dao.create(o);
         // TODO - mutate old object or make new object with ID from DB
-        return oWithId;
+        return getById(id);
     }
 
     @Override
