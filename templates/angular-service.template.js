@@ -2,18 +2,20 @@
     'use strict';
 
     var module = angular.module(
-        '@@moduleName@@',
+        '@@moduleName@@.service',
         []
     );
 
     module.factory(
-        '@@name@@',
+        '@@name@@Service',
         [
             function () {
                 var service = {};
-                service.test = function () {
-                    return 'it works';
+
+                service.testIt = function () {
+                    return 'the service works';
                 };
+
                 return service;
             }
         ]

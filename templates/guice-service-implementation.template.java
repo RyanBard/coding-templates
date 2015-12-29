@@ -1,54 +1,68 @@
 package @@moduleName@@;
 
+import javax.annotation.Nonnull;
 import javax.inject.Inject;
 
 import java.util.List;
 
+import static java.util.Objects.requireNonNull;
 
-public class Default@@name@@ implements @@name@@ {
 
-    private final Object dao;
+/**
+ * A default implementation of {@link @@name@@Service}.
+ */
+public class Default@@name@@Service implements @@name@@Service {
 
+    private final @@name@@Dao dao;
+
+    /**
+     * An injectable constructor.
+     *
+     * @param dao the dao to store and retrieve {@link @@name@@}s
+     */
     @Inject
-    public Default@@name@@(
-        Object dao
+    public Default@@name@@Service(
+            @Nonnull @@name@@Dao dao
     ) {
-        this.dao = dao;
+        this.dao = requireNonNull(dao);
     }
 
     @Override
-    public Object getById(
-        String id
+    public @@name@@ getById(
+            String id
     ) {
+        // TODO - validate input
         return dao.getById(id);
     }
 
     @Override
-    public List<Object> getAll() {
+    public List<@@name@@> getAll() {
         return dao.getAll();
     }
 
     @Override
-    public Object create(
-        Object o
+    public @@name@@ create(
+            @Nonnull @@name@@ toCreate
     ) {
-        String id = dao.create(o);
-        // TODO - mutate old object or make new object with ID from DB
+        // TODO - validate input
+        String id = dao.create(toCreate);
         return getById(id);
     }
 
     @Override
-    public Object update(
-        Object o
+    public @@name@@ update(
+            @Nonnull @@name@@ toUpdate
     ) {
-        dao.update(o);
-        return o;
+        // TODO - validate input
+        dao.update(toUpdate);
+        return getById(toUpdate.getId());
     }
 
     @Override
     public void delete(
-        String id
+            String id
     ) {
+        // TODO - validate input
         dao.delete(id);
     }
 

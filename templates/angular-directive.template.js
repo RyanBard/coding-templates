@@ -2,12 +2,12 @@
     'use strict';
 
     var module = angular.module(
-        '@@moduleName@@',
+        '@@moduleName@@.directive',
         []
     );
 
     module.directive(
-        '@@name@@',
+        '@@name@@Directive',
         [
             function () {
                 return {
@@ -17,7 +17,7 @@
                     replace: false,
                     template: '<div ng-bind="test"></div>',
                     link: function (scope, element, attributes) {
-                        scope.test = 'it works';
+                        scope.test = 'the directive works';
                     }
                 };
             }

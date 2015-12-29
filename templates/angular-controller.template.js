@@ -2,18 +2,28 @@
     'use strict';
 
     var module = angular.module(
-        '@@moduleName@@',
-        []
+        '@@moduleName@@.controller',
+        [
+            '@@moduleName@@.directive',
+            '@@moduleName@@.resource',
+            '@@moduleName@@.service'
+        ]
     );
 
     module.controller(
-        '@@name@@',
+        '@@name@@Controller',
         [
             '$scope',
+            '@@name@@Service',
+            '@@name@@',
             function (
-                $scope
+                $scope,
+                @@name@@Service,
+                @@name@@
             ) {
-                $scope.test = 'it works';
+                $scope.controllerTest = 'the controller works';
+                $scope.domainModel = @@name@@.query();
+                $scope.serviceTest = @@name@@Service.testIt();
             }
         ]
     );

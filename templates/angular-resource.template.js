@@ -2,7 +2,7 @@
     'use strict';
 
     var module = angular.module(
-        '@@moduleName@@',
+        '@@moduleName@@.resource',
         [
             'ngResource'
         ]
