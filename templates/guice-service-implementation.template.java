@@ -5,6 +5,8 @@ import javax.inject.Inject;
 
 import java.util.List;
 
+import com.codahale.metrics.annotation.Timed;
+
 import static java.util.Objects.requireNonNull;
 
 
@@ -28,6 +30,7 @@ public class Default@@name@@Service implements @@name@@Service {
     }
 
     @Override
+    @Timed
     public @@name@@ getById(
             String id
     ) {
@@ -36,11 +39,13 @@ public class Default@@name@@Service implements @@name@@Service {
     }
 
     @Override
+    @Timed
     public List<@@name@@> getAll() {
         return dao.getAll();
     }
 
     @Override
+    @Timed
     public @@name@@ create(
             @Nonnull @@name@@ toCreate
     ) {
@@ -50,6 +55,7 @@ public class Default@@name@@Service implements @@name@@Service {
     }
 
     @Override
+    @Timed
     public @@name@@ update(
             @Nonnull @@name@@ toUpdate
     ) {
@@ -59,6 +65,7 @@ public class Default@@name@@Service implements @@name@@Service {
     }
 
     @Override
+    @Timed
     public void delete(
             String id
     ) {
