@@ -31,7 +31,7 @@ case $language in
         ;;
     java)
         fileExtension=java
-        packagePath="${moduleName//\./\/}"
+        packagePath="${moduleName//\.//}"
         destination="$destination/$packagePath"
         ;;
 esac
