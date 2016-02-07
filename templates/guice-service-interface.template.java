@@ -1,5 +1,7 @@
 package @@moduleName@@;
 
+import javax.annotation.Nonnull;
+
 import java.util.List;
 
 
@@ -16,7 +18,7 @@ public interface @@name@@Service {
      * @throws RuntimeException if the {@link @@name@@} wasn't found
      * @throws NullPointerException if id is null
      */
-    @@name@@ getById(String id);
+    @@name@@ getById(@Nonnull String id);
 
     /**
      * Retrieves all {@link @@name@@}s.
@@ -33,7 +35,7 @@ public interface @@name@@Service {
      * @throws RuntimeException if the toCreate wasn't valid
      * @throws NullPointerException if toCreate was null
      */
-    @@name@@ create(@@name@@ toCreate);
+    @@name@@ create(@Nonnull @@name@@ toCreate);
 
     /**
      * Updates an existing {@link @@name@@}.
@@ -43,13 +45,13 @@ public interface @@name@@Service {
      * @throws RuntimeException if toUpdate wasn't valid
      * @throws NullPointerException if toUpdate or toUpdate.getId() was null
      */
-    @@name@@ update(@@name@@ toUpdate);
+    @@name@@ update(@Nonnull @@name@@ toUpdate);
 
     /**
      * Deletes a {@link @@name@@}.
      *
      * @throws NullPointerException if id was null
      */
-    void delete(String id);
+    void delete(@Nonnull String id);
 
 }

@@ -32,7 +32,7 @@ public class Default@@name@@Service implements @@name@@Service {
     @Override
     @Timed
     public @@name@@ getById(
-            String id
+            @Nonnull String id
     ) {
         // TODO - validate input
         return dao.getById(id);
@@ -67,7 +67,7 @@ public class Default@@name@@Service implements @@name@@Service {
     @Override
     @Timed
     public void delete(
-            String id
+            @Nonnull String id
     ) {
         // TODO - validate input
         dao.delete(id);
