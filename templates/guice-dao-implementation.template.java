@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 
 import static java.util.Objects.requireNonNull;
 
-
 /**
  * A mock implementation of {@link @@name@@Dao} that uses a {@link Map} for its datastore.
  */

@@ -4,7 +4,6 @@ import javax.annotation.Nonnull;
 
 import java.util.List;
 
-
 /**
  * A dao for storing and retrieving {@link @@name@@}s.
  */
@@ -47,6 +46,7 @@ public interface @@name@@Dao {
     /**
      * Deletes a {@link @@name@@}.
      *
+     * @param id the id of the {@link @@name@@}
      * @throws NullPointerException if id was null
      */
     void delete(@Nonnull String id);

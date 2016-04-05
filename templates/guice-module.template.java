@@ -9,7 +9,6 @@ import java.util.concurrent.atomic.AtomicInteger;
 import com.google.inject.AbstractModule;
 import com.google.inject.Provides;
 
-
 /**
  * A guice module to configure the daos and services for {@link @@name@@}s.
  */

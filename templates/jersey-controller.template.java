@@ -13,8 +13,9 @@ import javax.ws.rs.core.MediaType;
 
 import java.util.List;
 
-import static java.util.Objects.requireNonNull;
+import com.codahale.metrics.annotation.Timed;
 
+import static java.util.Objects.requireNonNull;
 
 @Path("api/todo")
 @Produces(MediaType.APPLICATION_JSON)
@@ -36,6 +37,7 @@ public class @@name@@WebService {
 
     @GET
     @Path("{id}")
+    @Timed
     public @@name@@ getById(
             @PathParam("id") String id
     ) {
@@ -43,12 +45,14 @@ public class @@name@@WebService {
     }
 
     @GET
+    @Timed
     public List<@@name@@> getAll() {
         return service.getAll();
     }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
+    @Timed
     public @@name@@ create(
             @@name@@ toCreate
     ) {
@@ -58,6 +62,7 @@ public class @@name@@WebService {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("{id}")
+    @Timed
     public @@name@@ update(
             @PathParam("id") String id,
             @@name@@ toUpdate
@@ -68,6 +73,7 @@ public class @@name@@WebService {
 
     @DELETE
     @Path("{id}")
+    @Timed
     public void delete(
             @PathParam("id") String id
     ) {

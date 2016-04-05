@@ -9,7 +9,6 @@ import com.codahale.metrics.annotation.Timed;
 
 import static java.util.Objects.requireNonNull;
 
-
 /**
  * A default implementation of {@link @@name@@Service}.
  */
